@@ -1,0 +1,29 @@
+<script>
+    var item = prompt("Podaj nazwę elementu lub jego klasę css");
+    if (item == null || item == "") {
+        alert("Użytkownik zamknął okno.");
+    } else {
+        var elements = document.getElementsByClassName(item);
+        var text = "Wyszukanie po klasie:\n";
+        for(var i = 0; i < elements.length; i++) {
+            text += (i+1) + ":\n";
+            text += elements[i].outerHTML;
+            text += '\n';
+        }
+        var elements = document.getElementsByTagName(item);
+        text += "Wyszukanie po tagu:\n";
+        for(var i = 0; i < elements.length; i++) {
+            text += (i+1) + ":\n";
+            text += elements[i].outerHTML;
+            text += '\n';
+        }
+        var elements = document.getElementsByName(item);
+        text += "Wyszukanie po nazwie:\n";
+        for(var i = 0; i < elements.length; i++) {
+            text += (i+1) + ":\n";
+            text += elements[i].outerHTML;
+            text += '\n';
+        }
+        console.log(text);
+    }
+</script>
